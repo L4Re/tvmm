@@ -118,7 +118,7 @@ Cpu_dev::start()
   auto res = myself->vcpu_resume_commit(myself->vcpu_resume_start());
 
   // Could not enter guest! Take us offline...
-  Err().printf("vcpu_resume_commit error %lx\n", l4_error(res));
+  Err().printf("vcpu_resume_commit error %d\n", l4_error(res));
   l4_sleep_forever();
 }
 
